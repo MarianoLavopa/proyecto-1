@@ -10,6 +10,7 @@
 
 /*--- Estilos Generales ---*/
 body{
+	width: 100%; 
 	background:lightgreen;
 	font-family:Arial,Helvetica,Sans-serif;
 	/*background-image: url("../imagenes/Reciente.jpg");*/
@@ -32,8 +33,10 @@ a:hover {
 
 /*--- Header ---*/
 header{
-	width:100%;
+	width:63.5%;
+	margin-left: 18.3%;
 	float:left;
+	border-radius:6px;
 	background:#585858;
 	box_shadow:0px 3px 5px #000;
 	-moz-box_shadow:0px 3px 5px #000;
@@ -52,10 +55,6 @@ header{
 	width:300px;
 	font-weight: bold;
 	margin-top: 40px;
-}
-
-.list-li{
-	fo:#FF0000;
 }
 
 #logotipo a{
