@@ -13,12 +13,12 @@ body{
 	background:rgb(26, 61, 26);
 	font-family:Arial,Helvetica,Sans-serif;
 	margin:auto;
-	
 }
 
 a {
 	text-decoration:none;
 }
+
 a:hover {
 	text-decoration:underline;
 	color:#fff;
