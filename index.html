@@ -10,13 +10,13 @@
 	</head>
 	
 	<body>
-		<header>
+		<header id="topheader">
 			<div id="subheader">
-				<div id="logotipo"><p><a href="https://www.facebook.com/mariano.lavopa"> Maravillas del mundo moderno</a></p></div>
+				<div id="logotipo"><p><a href="https://www.facebook.com/mariano.lavopa" id="subtitulo"> Maravillas del mundo moderno</a></p></div>
 				
 				<nav>
 					<label class="switch" >
-						<input type="checkbox" onclick="FUNCION();">
+						<input type="checkbox" onclick="ChangeStyle();">
 						<span class="slider round" ></span>					
 					</label>
 					<ul class = "list-li">
@@ -32,7 +32,7 @@
 		
 			<section id="main">
 			
-				<section class="slideshow">
+				<section class="slideshow" id="bordeizquierdo">
 					<!-- ACA VA EL SCRIPT-->
 					<div class="center-slideshow">
 						<form name="slideforma">
@@ -66,7 +66,7 @@
 					<!-- END SLIDESHOW -->
 					
 				</section>
-				<section class="text-camp">
+				<section class="text-camp" id="bordederecho">
 					<form name="textform">
 					El Coliseo o Anfiteatro Flavio es un anfiteatro de la época del Imperio romano, 
 					construido en el siglo I y ubicado en el centro de la ciudad de Roma. Su denominación original, 
@@ -129,8 +129,8 @@
 							<label for="email">User Email:</label><br>
 							<input type="text" id="email" name="email"><br>
 							<label for="pwd">Password:</label><br>
-              <input type="password" size=15 name="clave" onkeyup="muestra_seguridad_clave(this.value, this.form)">
-              <i>seguridad:</i> <input name="seguridad" type="text" style="border: 0px; background-color:ffffff; text-decoration:italic;" onfocus="blur()"><br>
+              <input id="pass" type="password" size=15 name="clave" onkeyup="muestra_seguridad_clave(this.value, this.form)">
+              <i>seguridad:</i> <input id="security" name="seguridad" type="text" style="border: 0px; background-color:ffffff; text-decoration:italic;" onfocus="blur()"><br>
               <input class="boton" type="button" value="Save" onclick="saving();">
             </form>			               							
           </article>         
@@ -139,44 +139,12 @@
       <section id="emails">
         <h3>Ultimos emails registrados</h3>
         <form>
-          <i>  1er Email: </i> <input id="0" type="text" onfocus="blur()"><br>
-          <i>  2do Email: </i> <input id="1" type="text" onfocus="blur()"><br> 
-          <i>  3er Email: </i> <input id="2" type="text" onfocus="blur()"><br> 
-          <i>  4to Email: </i> <input id="3" type="text" onfocus="blur()"><br> 
-          <i>  5to Email: </i> <input id="4" type="text" onfocus="blur()"><br> 
+          <i>  1er Email: </i> <input id="0" type="text" onfocus="blur()" class="correos"><br>
+          <i>  2do Email: </i> <input id="1" type="text" onfocus="blur()" class="correos"><br> 
+          <i>  3er Email: </i> <input id="2" type="text" onfocus="blur()" class="correos"><br> 
+          <i>  4to Email: </i> <input id="3" type="text" onfocus="blur()" class="correos"><br> 
+          <i>  5to Email: </i> <input id="4" type="text" onfocus="blur()" class="correos"><br> 
         </form>  
-      </section>
-			
-			<footer id="help">
-				<section id="acerca-de">
-					<article>
-						<h3>Para mas información</h3>
-						<p>
-							<ul>
-								<li><a href="https://es.wikipedia.org/wiki/Coliseo">Coliseo</a></li>
-								<li><a href="https://es.wikipedia.org/wiki/Petra">Petra</a></li>
-								<li><a href="https://es.wikipedia.org/wiki/Chich%C3%A9n_Itz%C3%A1">Chichen Itzá</a></li>
-								<li><a href="https://es.wikipedia.org/wiki/Machu_Picchu">Machu Picchu</a></li>
-								<li><a href="https://es.wikipedia.org/wiki/Gran_Muralla_China">Muralla China</a></li>
-								<li><a href="https://es.wikipedia.org/wiki/Taj_Mahal">Taj Mahal</a></li>
-								<li><a href="https://es.wikipedia.org/wiki/Cristo_Redentor">Cristo Redentor</a></li>
-							</ul>
-						</p>
-					</article>
-				</section>
-				
-				<section id="redes-s">
-					<div class="email"><a href="http://www.google.com"></a></div>
-					<div class="twitter"><a href="https://twitter.com/explore"></a></div>
-					<div class="youtube"><a href="https://www.youtube.com/"></a></div>
-					<div class="facebook"><a href="https://www.facebook.com"></a></div>
-				</section>
-			
-			</footer>
-				
-			<div id="copyright"><p>This is Mariano's version</p></div>
-				
-		</section>
   </body>
   <script>loadState();</script>
 </html>
