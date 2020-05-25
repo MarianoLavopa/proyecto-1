@@ -4,5 +4,5 @@
 
 ## **Introducción**
 
- La tematica elegida fue el tema 1. También, ademas de implementar el tema 1, se imcorporaron varios elementos para que 
+ La tematica elegida fue el tema 1. También, ademas de implementar el tema 1, se incorporaron varios elementos para que 
  la pagina web posea un poco mas de contenido.
