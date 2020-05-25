@@ -16,7 +16,7 @@
 				
 				<nav>
 					<label class="switch" >
-						<input type="checkbox" onclick="ChangeStyle();">
+						<input type="checkbox" onclick="ChangeStyle();" id="toggle">
 						<span class="slider round" ></span>					
 					</label>
 					<ul class = "list-li">
@@ -54,9 +54,7 @@
 							<!-- START SLIDESHOW BUTTONS -->
 							<table class="slide-buttons"><tr><td>
 								<input type=button onclick="previous();" value="&#9668;" title="Previous" class="button-slides" onmouseover="this.className='buttonon-slides'" onmouseout="this.className='button-slides'">
-									</td><td>
-								<input type=button name="slidebutton" onclick="ap(this.value);" value="AutoPlay" title="AutoPlay" class="button-slides" onmouseover="this.className='buttonon-slides'" onmouseout="this.className='button-slides'">
-									</td><td>
+									</td><td>	
 								<input type=button onclick="next();" value="&#9658;" title="Next" class="button-slides" onmouseover="this.className='buttonon-slides'" onmouseout="this.className='button-slides'">
 									</td></tr></table>
 							<!-- END SLIDESHOW BUTTONS -->
@@ -139,11 +137,11 @@
       <section id="emails">
         <h3>Ultimos emails registrados</h3>
         <form>
-          <i>  1er Email: </i> <input id="0" type="text" onfocus="blur()" class="correos"><br>
-          <i>  2do Email: </i> <input id="1" type="text" onfocus="blur()" class="correos"><br> 
-          <i>  3er Email: </i> <input id="2" type="text" onfocus="blur()" class="correos"><br> 
-          <i>  4to Email: </i> <input id="3" type="text" onfocus="blur()" class="correos"><br> 
-          <i>  5to Email: </i> <input id="4" type="text" onfocus="blur()" class="correos"><br> 
+          <input id="0" type="text" onfocus="blur()" class="correos"><br>
+          <input id="1" type="text" onfocus="blur()" class="correos"><br> 
+          <input id="2" type="text" onfocus="blur()" class="correos"><br> 
+          <input id="3" type="text" onfocus="blur()" class="correos"><br> 
+          <input id="4" type="text" onfocus="blur()" class="correos"><br> 
         </form>  
   </body>
   <script>loadState();</script>
