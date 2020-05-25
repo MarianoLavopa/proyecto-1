@@ -64,7 +64,6 @@ header{
 }
 
 /*--- Menu ---*/
-
 header #subheader nav{
 	float:left;
 	width:660px;
@@ -295,7 +294,6 @@ aside{
 	border-radius:5px;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
-	box_shadow:0px 2px 2px #000;
 	-moz-box_shadow:0px 2px 2px #000;
 	-webkit-box_shadow:0px 2px 2px #000;
 }
@@ -350,7 +348,6 @@ footer section{
 	padding:20px;
 	
 }
-
 
 .switch {
   position: relative;
@@ -434,7 +431,7 @@ table.slide-buttons tr,
 table.slide-buttons td	{ border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; border: 0; }
 
 .button-slides	{
-		color: #FFFFFF;
+		color: yellow;
 		background-color:#000000;
 		font-family: arial, helvetica, sans-serif;
 		font-size: 13px;
@@ -446,21 +443,6 @@ table.slide-buttons td	{ border-collapse: collapse; border-spacing: 0; margin: 0
 		-webkit-appearance: none;
 		border-radius: 0px;
 		border: #000000 1px solid;
-		}
-
-.buttonon-slides {
-		color: #FFFFFF;
-		background-color:#0099FF;
-		font-family: arial, helvetica, sans-serif;
-		font-size: 13px;
-		font-weight: bold;
-		cursor: pointer;
-		text-align: center;
-		padding: 3px 10px 3px 10px;
-		margin: 0px;
-		-webkit-appearance: none;
-		border-radius: 0px;
-		border: #0099FF 1px solid;
 		}
 
 .boton {
@@ -486,5 +468,7 @@ table.slide-buttons td	{ border-collapse: collapse; border-spacing: 0; margin: 0
 }
 
 .correos {
+	margin-left: 50px;
 	border-radius: 10px;
+	width: 70%;
 }
