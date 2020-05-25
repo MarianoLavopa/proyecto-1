@@ -1,5 +1,3 @@
-
-var rotate_delay = 3000; // delay in milliseconds (5000 = 5 secs)
 current = 0;
 var maravillas=[
 "El Coliseo o Anfiteatro Flavio es un anfiteatro de la época del Imperio romano, construido en el siglo I y ubicado en el centro de la ciudad de Roma. Su denominación original, Anfiteatro Flavio, hace referencia a la dinastía Flavia de emperadores que lo construyó; su nombre posterior,Coliseo, y por el que es más conocido en la actualidad, se debe a una gran estatua que había cerca, el Coloso de Nerón, que no ha llegado hasta nosotros. Por su conservación e historia, el Coliseo es uno de los monumentosmás famosos de la Antigüedad clásica. Fue declarado Patrimonio de la Humanidad en 1980 por la Unesco y una de Las Nuevas SieteMaravillas del Mundo Moderno el 7 de julio de 2007.Los materiales utilizados en la construcción de este son bloques de travertino, hormigón,madera, ladrillo, piedra (toba), mármol y estuco. En la antigüedad poseía un aforo para unos 65 000 espectadores, con ochenta filas de gradas.",
@@ -42,76 +40,55 @@ function last() {
     document.textform.innerHTML=maravillas[current];
 }
 
-function ap(text) {
-    document.slideforma.slidebutton.value = (text == "Stop") ? "AutoPlay" : "Stop";
-    rotate();
-    document.textform.innerHTML=maravillas[current];
-}
-
 function change() {
     current = document.slideforma.slide.selectedIndex;
     document.images.show.src = document.slideforma.slide[current].value;
     document.textform.innerHTML=maravillas[current];
 }
 
-function rotate() {
-    if (document.slideforma.slidebutton.value == "Stop") {
-        current = (current == document.slideforma.slide.length-1) ? 0 : current+1;
-        document.images.show.src = document.slideforma.slide[current].value;
-        document.slideforma.slide.selectedIndex = current;
-        window.setTimeout("rotate()", rotate_delay);
-        document.textform.innerHTML=maravillas[current];
-   }
-}
-
 function seguridad_clave(clave){
    var seguridad = 0;
-   if (clave.length!=0){
-      if (tiene_numeros(clave) && tiene_letras(clave) && clave.length >=3){
+   if(clave.length>3){
+
+      if(tiene_minusculas(clave) && tiene_mayusculas(clave))
          seguridad += 30;
-      }
-      if (tiene_minusculas(clave) && tiene_mayusculas(clave) && clave.length >=3){
-         seguridad += 30;
-      }
-      if (clave.length >= 4 && clave.length <= 6){
-         seguridad += 10;
-      }else{
-         if (clave.length >= 7 && clave.length <= 9){
-            seguridad += 30;
-         }else{
-            if (clave.length > 9){
-               seguridad += 40;
-            }
-         }
-      }
+      else
+         seguridad +=15;
+
+      if(tiene_letras(clave) && tiene_numeros(clave))
+         seguridad += 20;
+      
+      if (tiene_minusculas(clave) && tiene_mayusculas(clave) && tiene_simbolos(clave))
+         seguridad +=20;
+      else
+         if(tiene_letras(clave) && tiene_simbolos(clave))
+            seguridad +=10;
+      
+      if(clave.length>=7)
+         seguridad +=15;
+      
+      if(clave.length>=9)
+         seguridad+=15;
    }
-   return seguridad            
-}  
+   return seguridad;
+}
 
 function muestra_seguridad_clave(clave,formulario){
    seguridad=seguridad_clave(clave);
    formulario.seguridad.value=seguridad + "%";
 }
 
-var numeros="0123456789";
-
 function tiene_numeros(texto){
-   for(i=0; i<texto.length; i++){
-      if (numeros.indexOf(texto.charAt(i),0)!=-1){
+   for(i=0 ; i<texto.length;i++){
+      if(texto.charCodeAt(i)>=48 && texto.charCodeAt(i)<=57)
          return 1;
-      }
    }
    return 0;
 }
 
-var letras="abcdefghyjklmnñopqrstuvwxyz";
-
 function tiene_letras(texto){
-   texto = texto.toLowerCase();
-   for(i=0; i<texto.length; i++){
-      if (letras.indexOf(texto.charAt(i),0)!=-1){
-         return 1;
-      }
+   if (tiene_minusculas(texto)|| tiene_mayusculas(texto)){
+       return 1;
    }
    return 0;
 }
@@ -134,6 +111,14 @@ function tiene_mayusculas(texto){
    return 0;
 }
 
+function tiene_simbolos(texto){
+   for(i=0;i<texto.length;i++){
+      if(texto.charAt(i).match(/(.*[!,@,#,$,%,^,&,*,?,_,~])/))
+         return 1;
+   }
+   return 0;
+}
+
 var toggle = 0;
 myStorage = window.localStorage;
 toggleStorage = window.localStorage;
@@ -149,7 +134,7 @@ function ChangeStyle(){
 	}
 	else{
         Estilo2();
-        toggle--;
+        toggle = toggle-1;
         toggleStorage.setItem("toggle",toggle);
 	}
 }
@@ -160,14 +145,14 @@ emailStorage = window.localStorage;
 
 function loadState(){
     var st = toggleStorage.getItem("toggle");
-    if(st == 0)
-      st++;
-   else
-      st--;
-    if(st == 0)
+    if(st == 1){
+      document.getElementById("toggle").click();
       Estilo1();
-   else
+      toggleStorage.setItem("toggle",st);
+    }
+   else{
       Estilo2();
+   }
     if(CantEmailStorage.getItem("elementos")==null)
         CantEmailStorage.setItem("elementos",0);
     for(i=0;i<5;i++){
@@ -180,16 +165,21 @@ function saving(){
     var email = document.getElementById("email").value;
     var elem = myStorage.getItem(email);
     if(elem==null){
-        alert("Account Created Successfully");
-        myStorage.setItem(email,email);
-        var NumEmail = parseInt(CantEmailStorage.getItem("elementos"));
-        if (NumEmail==5){
-            CantEmailStorage.setItem("elementos",0);
-            NumEmail = 0;
-        }
-        emailStorage.setItem(NumEmail,email);
-        NumEmail++;
-        CantEmailStorage.setItem("elementos",NumEmail);
+       validar = validarEmail(email);
+       if(validar){
+          alert("Account Created Successfully");
+          myStorage.setItem(email,email);
+          var NumEmail = parseInt(CantEmailStorage.getItem("elementos"));
+          if (NumEmail==5){
+             CantEmailStorage.setItem("elementos",0);
+             NumEmail = 0;
+         }
+          emailStorage.setItem(NumEmail,email);
+          NumEmail++;
+         CantEmailStorage.setItem("elementos",NumEmail);
+      }
+      else
+         alert("Email Invalido");
     }
     else{
         alert("Sorry, the email is already used");
@@ -217,3 +207,11 @@ function Estilo2(){
    document.getElementById("bordederecho").style.borderColor="orange";
    document.getElementById("bordeizquierdo").style.borderColor="orange";
 }
+
+function validarEmail(valor) {
+   if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(valor)){
+    return true;
+   } else {
+    return false;
+   }
+ }
