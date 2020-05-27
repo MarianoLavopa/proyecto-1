@@ -1,18 +1,149 @@
-<!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<head>
+		<script type="text/javascript" src="js/app.js"></script>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+		<meta charset="UTF-8">
+		<meta name="description" content="Descripcion que sirve para el navegador">
+		<meta name="keywords" content="Palabras claves para el buscador separadas por ,">
+		<link id="style" rel="stylesheet" type="text/css" href="css/app.css"/>
+		<title> Maravillas </title>
+	</head>
+	
+	<body>
+		<header id="topheader">
+			<div id="subheader">
+				<div id="logotipo"><p><a href="https://www.facebook.com/mariano.lavopa" id="subtitulo"> Maravillas del mundo moderno</a></p></div>
+				
+				<nav>
+					<label class="switch" >
+						<input type="checkbox" onclick="ChangeStyle();" id="toggle">
+						<span class="slider round" ></span>					
+					</label>
+					<ul class = "list-li">
+						<li><a href="http://www.google.com"> Ir a google</a></li>
+						<li><a href="http://www.facebook.com"> Ir a facebook</a></li>
+						<li><a href="http://www.gmail.com"> Ir a Gmail</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		
+		<section id="wrap">
+		
+			<section id="main">
+			
+				<section class="slideshow" id="bordeizquierdo">
+					<!-- ACA VA EL SCRIPT-->
+					<div class="center-slideshow">
+						<form name="slideforma">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/app.css">
+							<!-- EDIT THIS AREA TO ADD AND REMOVE PICTURES FROM THE SLIDESHOW -->
 
-    <title>Proyecto 1</title>
-  </head>
-  <body>
-    <h1>Proyecto 1</h1>
+							<input type="hidden" value="imagenes/slide-1.jpg" name="slide" onchange="change();">
+							<input type="hidden" value="imagenes/slide-2.jpg" name="slide" onchange="change();">
+							<input type="hidden" value="imagenes/slide-3.jpg" name="slide" onchange="change();">
+							<input type="hidden" value="imagenes/slide-4.jpg" name="slide" onchange="change();">
+							<input type="hidden" value="imagenes/slide-5.jpg" name="slide" onchange="change();">
+							<input type="hidden" value="imagenes/slide-6.jpg" name="slide" onchange="change();">
+							<input type="hidden" value="imagenes/slide-7.jpg" name="slide" onchange="change();">
 
-    <!-- JavaScript -->
-    <script src="js/app.js"></script>
+							<!-- THE NEXT LINE IS THE STARTING SLIDE -->
+
+							<img src="imagenes/slide-1.jpg" id="show" class="slide-image" alt="Slideshow"><br>
+
+							<!-- START SLIDESHOW BUTTONS -->
+							<table class="slide-buttons"><tr><td>
+								<input type=button onclick="previous();" value="&#9668;" title="Previous" class="button-slides" onmouseover="this.className='buttonon-slides'" onmouseout="this.className='button-slides'">
+									</td><td>	
+								<input type=button onclick="next();" value="&#9658;" title="Next" class="button-slides" onmouseover="this.className='buttonon-slides'" onmouseout="this.className='button-slides'">
+									</td></tr></table>
+							<!-- END SLIDESHOW BUTTONS -->
+
+						</form>
+					</div>
+					<!-- END SLIDESHOW -->
+					
+				</section>
+				<section class="text-camp" id="bordederecho">
+					<form name="textform">
+					El Coliseo o Anfiteatro Flavio es un anfiteatro de la época del Imperio romano, 
+					construido en el siglo I y ubicado en el centro de la ciudad de Roma. Su denominación original, 
+					Anfiteatro Flavio, hace referencia a la dinastía Flavia de emperadores que lo construyó; su nombre posterior,
+					Coliseo, y por el que es más conocido en la actualidad, se debe a una gran estatua que había cerca, 
+					el Coloso de Nerón, que no ha llegado hasta nosotros. Por su conservación e historia, el Coliseo es uno de los monumentos
+					más famosos de la Antigüedad clásica. Fue declarado Patrimonio de la Humanidad en 1980 por la Unesco y una de Las Nuevas Siete
+					Maravillas del Mundo Moderno el 7 de julio de 2007.Los materiales utilizados en la construcción de este son bloques de travertino, hormigón,
+					madera, ladrillo, piedra (toba), mármol y estuco. En la antigüedad poseía un aforo para unos 65 000 espectadores, con ochenta filas de gradas.
+					</form>
+				</section>
+
+			</section>
+
+				<section id="contenido">
+				
+					<article>
+						<hgroup><h2 class="titulo">Maravilla en honor<h2></hgroup>
+						<p class="piramide">Piramide de Guiza</p>
+						<img class="Paisaje" src="imagenes/Guiza.jpg" alt="Paisaje"/>
+						<p>Se consideró que la Gran Pirámide de Guiza (Egipto) sería la octava maravilla honorífica. 
+						La Gran Pirámide había sido excluida de la votación, por ser la más antigua y la única que aún 
+						perdura de las siete maravillas del mundo antiguo. El hecho se dio en el marco de una gran oposición
+						de las autoridades culturales egipcias, tales como Zahi Hawass, secretario general del Consejo Superior 
+						de Antigüedades del gobierno egipcio (Ministro de Antigüedades hasta 2011), que calificó a este concurso de «operación publicitaria».
+						Desde que se crearon hace más de 4000 años, las pirámides de Egipto han sido los más portentosos y emblemáticos monumentos de la
+						civilización egipcia, así como la maravilla más antigua y única que se conserva,  y en particular cabe destacar, las tres grandes
+						pirámides de Giza, las tumbas de los reyes Keops, Kefrén y Micerino, cuya construcción se remonta, para la gran mayoría de estudiosos,
+						al periodo denominado Imperio Antiguo de Egipto. La Gran Pirámide de Giza, construida por Keops, es actualmente, una de las siete
+						Maravillas del Mundo. Otro destino a conocer, del periodo arcaico de Egipto, es La mastaba. Se trata de una construcción casi prismática,
+						que servía de  sepultura de los soberanos. Se cree que el paso de  mastaba a pirámide, era por el deseo de alcanzar alturas cada vez más 
+						significativas para manifestar la importancia y el poder del difunto faraón. Erguidas sobre la arena del desierto, son algo más que un templo
+						y una tumba a la gloria de un dios, porque en ellas también se realizaban complejos rituales de muerte y nacimiento.</p>
+					</article>
+		
+				</section>
+				
+				<aside>
+					<section class="widget">
+						<h3>Articulos Relacionados</h3>
+						<ul>
+							<li><a href="https://es.wikipedia.org/wiki/Cataratas_del_Iguaz%C3%BA">Cataratas del Iguazú.</a></li>
+							<li><a href="https://es.wikipedia.org/wiki/Glaciar_Perito_Moreno">Glaciar Perito Moreno.</a></li>
+							<li><a href="https://es.wikipedia.org/wiki/Biblioteca_de_Alejandr%C3%ADa">Biblioteca de Alejandria.</a></li>
+							<li><a href="https://es.wikipedia.org/wiki/Templo_de_Zeus_Ol%C3%ADmpico_(Atenas)">Templo de Zeus.</a></li>
+							
+						</ul>
+					</section>
+					
+					<section class="widget">
+						<h3>Articulos Recientes</h3>
+						<img class="Art" src ="imagenes/Reciente.jpg" alt="Art"/>
+					</section>
+				</aside>
+				
+			<section id="bienvenidos">
+					<article>
+						<h3>Registrarse en nuestro sitio web</h3>											
+						<form>
+							<label for="email">User Email:</label><br>
+							<input type="text" id="email" name="email"><br>
+							<label for="pwd">Password:</label><br>
+              <input id="pass" type="password" size=15 name="clave" onkeyup="muestra_seguridad_clave(this.value, this.form)">
+              <i>seguridad:</i> <input id="security" name="seguridad" type="text" style="border: 0px; background-color:ffffff; text-decoration:italic;" onfocus="blur()"><br>
+              <input class="boton" type="button" value="Save" onclick="saving();">
+            </form>			               							
+          </article>         
+        </section>
+
+      <section id="emails">
+        <h3>Ultimos emails registrados</h3>
+        <form>
+          <input id="0" type="text" onfocus="blur()" class="correos"><br>
+          <input id="1" type="text" onfocus="blur()" class="correos"><br> 
+          <input id="2" type="text" onfocus="blur()" class="correos"><br> 
+          <input id="3" type="text" onfocus="blur()" class="correos"><br> 
+          <input id="4" type="text" onfocus="blur()" class="correos"><br> 
+        </form>  
   </body>
+  <script>loadState();</script>
 </html>
