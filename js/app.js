@@ -167,7 +167,7 @@ function saving(){
     if(elem==null){
        validar = validarEmail(email);
        if(validar){
-          alert("Account Created Successfully");
+          swal("Account Created Successfully","Saved","success");
           myStorage.setItem(email,email);
           var NumEmail = parseInt(CantEmailStorage.getItem("elementos"));
           if (NumEmail==5){
@@ -179,10 +179,10 @@ function saving(){
          CantEmailStorage.setItem("elementos",NumEmail);
       }
       else
-         alert("Email Invalido");
+         swal("Invalid email","Try again","error");
     }
     else{
-        alert("Sorry, the email is already used");
+        swal("Sorry, the email is already used","Try again","error");
     }
     if(CantEmailStorage.getItem("elementos")==null)
         CantEmailStorage.setItem("elementos",0);
